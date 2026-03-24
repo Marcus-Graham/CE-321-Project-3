@@ -67,7 +67,7 @@ def ComputeBucklingLoad(bars):
     # Compute critical buckling load for all bars
     for bar in bars:
         E=bar.E
-        L=bar.Length()
+        L=bar.Length()*12
         I=bar.Iu if hasattr(bar, 'Iu') and bar.Iu != 0 else bar.It
         K=1.0
         if I==0:
