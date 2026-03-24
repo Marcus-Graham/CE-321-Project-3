@@ -41,7 +41,7 @@ def ComputeMemberForces(bars):
     for bar in bars:
         A=bar.A
         E=bar.E
-        L=bar.Length()*12
+        L=bar.Length()
         lambdax, lambday=bar.LambdaTerms()
         u1x=bar.init_node.xdisp
         u1y=bar.init_node.ydisp
@@ -67,7 +67,7 @@ def ComputeBucklingLoad(bars):
     # Compute critical buckling load for all bars
     for bar in bars:
         E=bar.E
-        L=bar.Length()*12
+        L=bar.Length()
         I=bar.Iu if hasattr(bar, 'Iu') and bar.Iu != 0 else bar.It
         K=1.0
         if I==0:
